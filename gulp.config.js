@@ -1,4 +1,4 @@
-module.export = function() {
+module.exports = function() {
     return {
         sources: {
             index: 'src/index.html',
@@ -13,10 +13,10 @@ module.export = function() {
         },
         dev: {
             index: 'dev',
-            scripts: 'dev/assets/javascript',
-            stylesheets: 'dev/assets/stylesheets',
-            images: 'dev/assets/images',
-            fonts: 'dev/assets/fonts'
+            scripts: 'dev/app',
+            stylesheets: 'dev/stylesheets',
+            images: 'dev/images',
+            fonts: 'dev/fonts'
         },
         release: {
             index: 'release',

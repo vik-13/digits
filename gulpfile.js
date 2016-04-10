@@ -1,17 +1,14 @@
 var config = require('./gulp.config')();
 
-var gulp = require('gulp');
-var tsc = require('gulp-typescript');
-var tsProject = tsc.createProject('tsconfig.json');
-var filter = require('gulp-filter');
-var uglify = require('gulp-uglify');
-var inject = require('gulp-inject');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var ngHtml2js = require('gulp-ng-html2js');
-var del = require('del');
-var es = require('event-stream');
-var mainBowerFiles = require('main-bower-files');
+var gulp = require('gulp'),
+    tsc = require('gulp-typescript'),
+    tsProject = tsc.createProject('tsconfig.json'),
+    filter = require('gulp-filter'),
+    uglify = require('gulp-uglify'),
+    sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
+    del = require('del'),
+    es = require('event-stream');
 
 gulp.task('clean-dev', cleanDev);
 // gulp.task('clean-release', cleanRelease);
@@ -28,36 +25,32 @@ function cleanDev() {
 function dev() {
     return es.merge(
         buildIndex(),
+        buildStyles(),
+        buildScripts(),
         buildImages(),
         buildFonts()
     );
 }
 
 function buildIndex() {
-    var appStyles = buildStyles(),
-        appScripts = buildScripts(),
-        vendorScripts = buildVendorScripts();
-
     return gulp.src(config.sources.index)
-        .pipe(gulp.dest(config.dev.index))
-        .pipe(inject(vendorScripts, { relative: true, name: 'vendor' }))
-        .pipe(inject(appScripts, { relative: true }))
-        .pipe(inject(appStyles, { relative: true }))
         .pipe(gulp.dest(config.dev.index));
 }
 
 function buildImages() {
-
+    return gulp.src(config.sources.images)
+        .pipe(gulp.dest(config.dev.images));
 }
 
 function buildFonts() {
-
+    return gulp.src(config.sources.fonts)
+        .pipe(gulp.dest(config.dev.fonts));
 }
 
 function buildStyles() {
     return gulp.src(config.sources.stylesheets)
         .pipe(sass())
-        // .pipe(concat('app.css'))
+        .pipe(concat('app.css'))
         .pipe(gulp.dest(config.dev.stylesheets));
 }
 
@@ -72,8 +65,4 @@ function buildScripts() {
         buildTsScripts,
         buildJsScripts
     );
-}
-
-function buildVendorScripts() {
-
 }
