@@ -5,28 +5,23 @@ var gulp = require('gulp'),
     tsProject = tsc.createProject('tsconfig.json'),
     filter = require('gulp-filter'),
     uglify = require('gulp-uglify'),
+    inject = require('gulp-inject'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
     del = require('del'),
     es = require('event-stream');
 
 gulp.task('clean-dev', cleanDev);
-// gulp.task('clean-release', cleanRelease);
 gulp.task('dev', ['clean-dev'], dev);
 
 function cleanDev() {
     return del(config.dev.index);
 }
 
-// function cleanRelease() {
-//     return del(config.release.index);
-// }
-
 function dev() {
     return es.merge(
-        buildIndex(),
-        buildStyles(),
         buildScripts(),
+        buildIndex(),
         buildImages(),
         buildFonts()
     );
@@ -34,6 +29,8 @@ function dev() {
 
 function buildIndex() {
     return gulp.src(config.sources.index)
+        .pipe(inject(buildVendorScripts(), { relative: true, name: 'vendor' }))
+        .pipe(inject(buildStyles(), { relative: true }))
         .pipe(gulp.dest(config.dev.index));
 }
 
@@ -52,6 +49,11 @@ function buildStyles() {
         .pipe(sass())
         .pipe(concat('app.css'))
         .pipe(gulp.dest(config.dev.stylesheets));
+}
+
+function buildVendorScripts() {
+    return gulp.src(config.sources.vendors)
+        .pipe(gulp.dest(config.dev.vendors));
 }
 
 function buildScripts() {

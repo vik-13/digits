@@ -2,28 +2,35 @@ module.exports = function() {
     return {
         sources: {
             index: 'src/index.html',
-            tsScripts: 'src/app/**/*.ts',
+            tsScripts: [
+                'node_modules/angular2/typings/browser.d.ts',
+                'src/app/**/*.ts'
+            ],
             jsScripts: 'src/app/**/*.js',
             stylesheets: [
                 'src/app/**/*.scss',
                 'src/assets/stylesheets/**/*.scss'
             ],
             images: '/src/assets/images/**/*',
-            fonts: '/src/assets/fonts/**/*'
+            fonts: '/src/assets/fonts/**/*',
+            vendors: [
+                'node_modules/es6-shim/es6-shim.min.js',
+                'node_modules/systemjs/dist/system-polyfills.js',
+                'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
+
+                'node_modules/angular2/bundles/angular2-polyfills.js',
+                'node_modules/systemjs/dist/system.src.js',
+                'node_modules/rxjs/bundles/Rx.js',
+                'node_modules/angular2/bundles/angular2.dev.js'
+            ]
         },
         dev: {
             index: 'dev',
             scripts: 'dev/app',
             stylesheets: 'dev/stylesheets',
             images: 'dev/images',
-            fonts: 'dev/fonts'
-        },
-        release: {
-            index: 'release',
-            scripts: 'release/assets/javascript',
-            stylesheets: 'release/assets/stylesheets',
-            images: 'release/assets/images',
-            fonts: 'release/assets/fonts'
+            fonts: 'dev/fonts',
+            vendors: 'dev/vendor'
         }
     };
 };
