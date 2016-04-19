@@ -23,7 +23,8 @@ function dev() {
         buildScripts(),
         buildIndex(),
         buildImages(),
-        buildFonts()
+        buildFonts(),
+        buildTemplates()
     );
 }
 
@@ -42,6 +43,11 @@ function buildImages() {
 function buildFonts() {
     return gulp.src(config.sources.fonts)
         .pipe(gulp.dest(config.dev.fonts));
+}
+
+function buildTemplates() {
+    return gulp.src(config.sources.templates)
+        .pipe(gulp.dest(config.dev.templates));
 }
 
 function buildStyles() {

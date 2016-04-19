@@ -13,6 +13,7 @@ module.exports = function() {
             ],
             images: '/src/assets/images/**/*',
             fonts: '/src/assets/fonts/**/*',
+            templates: '/src/app/**/*.html',
             vendors: [
                 'node_modules/es6-shim/es6-shim.min.js',
                 'node_modules/systemjs/dist/system-polyfills.js',
@@ -22,7 +23,11 @@ module.exports = function() {
                 'node_modules/systemjs/dist/system.src.js',
                 'node_modules/rxjs/bundles/Rx.js',
                 'node_modules/angular2/bundles/angular2.dev.js',
-                'node_modules/angular2/bundles/router.dev.js'
+                'node_modules/ng2-material/dist/ng2-material.js',
+                'node_modules/angular2/bundles/router.dev.js',
+
+                'node_modules/ng2-material/dist/ng2-material.css',
+                'node_modules/ng2-material/dist/font.css'
             ]
         },
         dev: {
@@ -31,6 +36,7 @@ module.exports = function() {
             stylesheets: 'dev/stylesheets',
             images: 'dev/images',
             fonts: 'dev/fonts',
+            templates: 'dev/app',
             vendors: 'dev/vendor'
         }
     };
