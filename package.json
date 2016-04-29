@@ -3,10 +3,16 @@
   "version": "0.0.1",
   "license": "GPLv3",
   "dependencies": {
-    "angular2": "",
+    "angular2": "2.0.0-beta.17",
     "ng2-material": "",
-    "del": "",
+
+    "systemjs": "0.19.26",
     "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "0.6.12",
+
+    "del": "",
     "event-stream": "",
     "gulp": "",
     "gulp-concat": "",
@@ -14,11 +20,7 @@
     "gulp-inject": "",
     "gulp-sass": "",
     "gulp-typescript": "",
-    "gulp-uglify": "",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.2",
-    "systemjs": "0.19.25",
-    "zone.js": "^0.6.10"
+    "gulp-uglify": ""
   },
   "devDependencies": {}
 }

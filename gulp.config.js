@@ -11,23 +11,19 @@ module.exports = function() {
                 'src/app/**/*.scss',
                 'src/assets/stylesheets/**/*.scss'
             ],
-            images: '/src/assets/images/**/*',
-            fonts: '/src/assets/fonts/**/*',
-            templates: '/src/app/**/*.html',
+            images: 'src/assets/images/**/*',
+            fonts: 'src/assets/fonts/**/*',
+            templates: 'src/app/**/*.html',
             vendors: [
                 'node_modules/es6-shim/es6-shim.min.js',
                 'node_modules/systemjs/dist/system-polyfills.js',
                 'node_modules/angular2/es6/dev/src/testing/shims_for_IE.js',
-
                 'node_modules/angular2/bundles/angular2-polyfills.js',
                 'node_modules/systemjs/dist/system.src.js',
                 'node_modules/rxjs/bundles/Rx.js',
-                'node_modules/angular2/bundles/angular2.dev.js',
-                'node_modules/ng2-material/dist/ng2-material.js',
-                'node_modules/angular2/bundles/router.dev.js',
+                'node_modules/angular2/bundles/angular2.dev.js'
 
-                'node_modules/ng2-material/dist/ng2-material.css',
-                'node_modules/ng2-material/dist/font.css'
+                //'node_modules/angular2/bundles/router.dev.js',
             ]
         },
         dev: {
