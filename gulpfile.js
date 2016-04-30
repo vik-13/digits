@@ -9,16 +9,24 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     concat = require('gulp-concat'),
     del = require('del'),
-    es = require('event-stream');
+    es = require('event-stream'),
+    tsLint = require('gulp-tslint'),
+    browserSync = require('browser-sync'),
+    superstatic = require('superstatic');
 
 gulp.task('clean-dev', cleanDev);
-gulp.task('dev', ['clean-dev'], dev);
+gulp.task('compile', compile);
+gulp.task('dev', ['clean-dev'], compile);
+gulp.task('ts-lint', lint);
+gulp.task('serve', ['dev'], serve);
+
+gulp.task('default', ['dev']);
 
 function cleanDev() {
     return del(config.dev.index);
 }
 
-function dev() {
+function compile() {
     return es.merge(
         buildScripts(),
         buildIndex(),
@@ -26,6 +34,35 @@ function dev() {
         buildFonts(),
         buildTemplates()
     );
+}
+
+function lint() {
+    return gulp.src(config.sources.tsScripts)
+        .pipe(tsLint())
+        .pipe(tsLint.report('prose', {
+            emitError: false
+        }));
+}
+
+function serve() {
+    gulp.watch([config.sources.tsScripts,
+        config.sources.stylesheets,
+        config.sources.templates,
+        config.sources.index], ['compile']).on('change', browserSync.reload);
+
+    browserSync({
+        port: 3000,
+        file: ['**/*.js', '**/*.css', '**/*.html'],
+        injectChanges: false,
+        logFileChanges: false,
+        logLevel: 'silent',
+        notify: true,
+        reloadDelay: 0,
+        server: {
+            baseDir: './dev',
+            middleware: superstatic({debug: false})
+        }
+    });
 }
 
 function buildIndex() {

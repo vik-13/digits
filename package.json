@@ -19,7 +19,12 @@
     "gulp-inject": "",
     "gulp-sass": "",
     "gulp-typescript": "",
-    "gulp-uglify": ""
+    "gulp-uglify": "",
+    "tslint": "",
+    "gulp-tslint": ""
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "superstatic": "",
+    "browser-sync": ""
+  }
 }

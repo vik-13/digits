@@ -11,4 +11,6 @@ import {DashboardComponent} from './components/dashboard/dashboard.component';
 @RouteConfig([
     {path:'/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true}
 ])
-export class AppComponent { }
+export class AppComponent {
+
+}
