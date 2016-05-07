@@ -48,7 +48,7 @@ function serve() {
     gulp.watch([config.sources.tsScripts,
         config.sources.stylesheets,
         config.sources.templates,
-        config.sources.index], ['compile']).on('change', browserSync.reload);
+        config.sources.index], ['compile']); //.on('change', browserSync.reload);
 
     browserSync({
         port: 3000,
