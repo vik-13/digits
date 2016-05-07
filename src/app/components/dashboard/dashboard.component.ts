@@ -1,10 +1,12 @@
 import {Component} from 'angular2/core';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector: 'dashboard',
-    template: '<h1>TEST</h1>'
-    // templateUrl: 'app/components/dashboard/dashboard.html'
+    templateUrl: 'app/components/dashboard/dashboard.html',
+    directives: [ROUTER_DIRECTIVES]
 })
+
 export class DashboardComponent {
 
 }
