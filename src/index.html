@@ -13,16 +13,9 @@
     <!-- vendor:js -->
     <!-- endinject -->
 
+    <script src="../systemjs.config.js"></script>
     <script>
-        System.config({
-            packages: {
-                app: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('app/main')
+        System.import('app')
                 .then(null, console.error.bind(console));
     </script>
 </head>
