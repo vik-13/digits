@@ -1,13 +1,28 @@
-<md-toolbar color="primary">This is the toolbar</md-toolbar>
-<ul>
-    <li>
-        <a [routerLink]="['Dashboard']">Dashboard</a>
-    </li>
-    <li>
-        <a [routerLink]="['Sign in']">Sign-in</a>
-    </li>
-    <li>
-        <a [routerLink]="['Sign up']">Sign-up</a>
-    </li>
-</ul>
-<router-outlet></router-outlet>
+<md-toolbar color="primary">
+    <md-icon (click)="start.toggle()" class="link header-menu-icon">menu</md-icon>
+    <span>This is the toolbar</span>
+    <span class="full-width-space"></span>
+    <span>Hello Guest!</span>
+</md-toolbar>
+<md-sidenav-layout class="layout-container">
+    <md-sidenav class="sidenav-container" #start>
+        <md-list>
+            <md-list-item>
+                <button md-button>New Game</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>Load Game</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>How To Play</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>About</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>Sign Out</button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <router-outlet></router-outlet>
+</md-sidenav-layout>

@@ -1,0 +1,20 @@
+html, body, .main-app-container {
+  height: 100%;
+}
+
+.main-app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav-container {
+  width: 300px;
+}
+
+.layout-container {
+  flex: 1;
+}
+
+.full-width-space {
+  flex: 1 1 auto;
+}
