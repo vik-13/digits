@@ -18,3 +18,25 @@ html, body, .main-app-container {
 .full-width-space {
   flex: 1 1 auto;
 }
+
+.main-view-block {
+  margin: 0 auto;
+  max-width: 680px;
+  min-width: 320px;
+}
+
+.block-container {
+  margin: 20px 0;
+}
+
+.small-cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .card {
+    margin: 10px;
+    flex: 1;
+    min-width: 140px;
+  }
+}
