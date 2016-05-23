@@ -1,3 +1,47 @@
+// reset defaults
+
+html {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+
+    &.inverse-link {
+        color: #ffffff;
+
+        &:hover,
+        &:visited,
+        &:active{
+            color: #ffffff;
+        }
+    }
+
+    &:hover,
+    &:visited,
+    &:active{
+        color: #000000;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 /* Master Styles */
 h1 {
     color: #369;

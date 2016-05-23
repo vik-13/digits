@@ -1,3 +1,7 @@
 button {
   width: 100%;
+
+  &.normal-button {
+    width: 75px;
+  }
 }

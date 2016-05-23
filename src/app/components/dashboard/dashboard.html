@@ -1,45 +1,72 @@
-<div class="main-view-block">
-    <div class="block-container">
-        <button md-button>New Game</button>
-    </div>
-    <div class="block-container">
-        <div>
-            <h3>Stored Games</h3>
-            <div class="small-cards-container">
-                <md-card class="card">
-                    <md-card-subtitle>15:23 23 may 2016</md-card-subtitle>
-                    <md-card-content>
-                        <p>height: <span>13</span></p>
-                        <p>digits: <span>16</span></p>
-                    </md-card-content>
-                </md-card>
-                <md-card class="card">
-                    <md-card-title>This is card 2</md-card-title>
-                </md-card>
-                <md-card class="card">
-                    <md-card-title>This is card 3</md-card-title>
-                </md-card>
-                <md-card class="card">
-                    <md-card-title>This is card 4</md-card-title>
-                </md-card>
-                <md-card class="card">
-                    <md-card-title>This is card 5</md-card-title>
-                </md-card>
-                <md-card class="card">
-                    <md-card-title>This is card 6</md-card-title>
-                </md-card>
-                <md-card class="card">
-                    <md-card-title>This is card 7</md-card-title>
-                </md-card>
-            </div>
+<md-toolbar color="primary">
+    <md-icon (click)="start.toggle()" class="link header-menu-icon">menu</md-icon>
+    <span>This is the toolbar</span>
+    <span class="full-width-space"></span>
+    <span>Hello Guest!</span>
+</md-toolbar>
+<md-sidenav-layout class="layout-container">
+    <md-sidenav class="sidenav-container" #start mode="side">
+        <md-list>
+            <md-list-item>
+                <button md-button>New Game</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>Load Game</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>How To Play</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>About</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>Sign Out</button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <div class="main-view-block">
+        <div class="block-container">
+            <button md-button>New Game</button>
         </div>
-    </div>
-    <div class="block-container">
-        <div>
-            <h3>LeadersSheet</h3>
+        <div class="block-container">
             <div>
-                Here are no nothing to show...
+                <h3>Stored Games</h3>
+                <div class="small-cards-container">
+                    <md-card class="card">
+                        <md-card-subtitle>15:23 23 may 2016</md-card-subtitle>
+                        <md-card-content>
+                            <p>height: <span>13</span></p>
+                            <p>digits: <span>16</span></p>
+                        </md-card-content>
+                    </md-card>
+                    <md-card class="card">
+                        <md-card-title>This is card 2</md-card-title>
+                    </md-card>
+                    <md-card class="card">
+                        <md-card-title>This is card 3</md-card-title>
+                    </md-card>
+                    <md-card class="card">
+                        <md-card-title>This is card 4</md-card-title>
+                    </md-card>
+                    <md-card class="card">
+                        <md-card-title>This is card 5</md-card-title>
+                    </md-card>
+                    <md-card class="card">
+                        <md-card-title>This is card 6</md-card-title>
+                    </md-card>
+                    <md-card class="card">
+                        <md-card-title>This is card 7</md-card-title>
+                    </md-card>
+                </div>
+            </div>
+        </div>
+        <div class="block-container">
+            <div>
+                <h3>LeadersSheet</h3>
+                <div>
+                    Here are no nothing to show...
+                </div>
             </div>
         </div>
     </div>
-</div>
+</md-sidenav-layout>

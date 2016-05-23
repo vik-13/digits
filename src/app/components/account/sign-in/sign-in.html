@@ -1,1 +1,22 @@
-This is sign-in component
+<div class="auth-page layout-row layout-align-center-center">
+    <div class="auth-block">
+        <md-toolbar color="primary">
+            <span>Sign in</span>
+        </md-toolbar>
+        <div class="auth-container">
+            <form>
+                <div class="element-container">
+                    <md-input placeholder="Email" type="email"></md-input>
+                </div>
+                <div class="element-container">
+                    <md-input placeholder="Password" type="password"></md-input>
+                </div>
+                <div class="auth-form-actions layout">
+                    <button md-button class="normal-button">Sign in</button>
+                    <div class="full-width-space"></div>
+                    <p><a [routerLink]="['Sign up']">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

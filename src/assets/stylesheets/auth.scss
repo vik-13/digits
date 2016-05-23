@@ -1,0 +1,31 @@
+.auth-page {
+  background: transparent url(../images/cool-background.jpg) no-repeat 0 0;
+  background-size: cover;
+
+  min-height: 100vh;
+  flex-direction: row;
+
+  .auth-block {
+    background: #ffffff;
+    max-width: 25%;
+    max-height: 100%;
+    box-sizing: border-box;
+    flex: 1 1 25%;
+
+    .auth-container {
+      padding: 8px;
+
+      form {
+        padding: 8px;
+
+        .element-container {
+          margin: 10px 0;
+        }
+
+        md-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -17,8 +17,8 @@ import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
     providers: [MdIconRegistry, HTTP_PROVIDERS]
 })
 @RouteConfig([
-    {path:'/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true},
-    {path:'/sign-in', name: 'Sign in', component: SignInComponent},
+    {path:'/dashboard', name: 'Dashboard', component: DashboardComponent},
+    {path:'/sign-in', name: 'Sign in', component: SignInComponent, useAsDefault: true},
     {path:'/sign-up', name: 'Sign up', component: SignUpComponent}
 ])
 export class AppComponent {
