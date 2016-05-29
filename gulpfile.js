@@ -52,15 +52,15 @@ function serve() {
 
     browserSync({
         port: 3000,
-        file: ['**/*.js', '**/*.css', '**/*.html'],
-        injectChanges: false,
+        files: ['dev/**/*.{html,css,js}'],
+        injectChanges: true,
         logFileChanges: false,
         logLevel: 'silent',
         notify: true,
         reloadDelay: 0,
         server: {
             baseDir: './dev',
-            middleware: superstatic({debug: false})
+            middleware: superstatic({debug: true})
         }
     });
 }

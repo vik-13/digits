@@ -15,6 +15,7 @@ module.exports = function() {
             fonts: 'src/assets/fonts/**/*',
             templates: 'src/app/**/*.html',
             vendors: [
+                'node_modules/es6-shim/es6-shim.min.js',
                 'node_modules/core-js/client/shim.min.js',
                 'node_modules/zone.js/dist/zone.js',
                 'node_modules/reflect-metadata/Reflect.js',
