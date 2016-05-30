@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {ROUTER_DIRECTIVES, RouterLink, RouteConfig} from '@angular/router-deprecated';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
-import {SignInComponent} from './components/account/sign-in/sign-in.component';
-import {SignUpComponent} from './components/account/sign-up/sign-up.component';
+import {AccountComponent} from './components/account/account.component';
 import {HTTP_PROVIDERS} from '@angular/http'
 import {MdButton} from '@angular2-material/button';
 import {MdToolbar} from '@angular2-material/toolbar';
@@ -18,8 +17,8 @@ import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 })
 @RouteConfig([
     {path:'/dashboard', name: 'Dashboard', component: DashboardComponent},
-    {path:'/sign-in', name: 'Sign in', component: SignInComponent, useAsDefault: true},
-    {path:'/sign-up', name: 'Sign up', component: SignUpComponent}
+    {path:'/account/...', name: 'Account', component: AccountComponent, useAsDefault: true}
+    // {path: '/**', redirectTo: ['Dashboard'] }
 ])
 export class AppComponent {
 
