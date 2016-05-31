@@ -1,0 +1,30 @@
+<md-toolbar color="primary">
+    <md-icon (click)="start.toggle()" class="link header-menu-icon">menu</md-icon>
+    <span>This is the toolbar</span>
+    <span class="full-width-space"></span>
+    <span>Hello Guest!</span>
+</md-toolbar>
+<md-sidenav-layout class="layout-container">
+    <md-sidenav class="sidenav-container" #start mode="side">
+        <md-list>
+            <md-list-item>
+                <button md-button>New Game</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>Load Game</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>How To Play</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>About</button>
+            </md-list-item>
+            <md-list-item>
+                <button md-button>Sign Out</button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <div class="main-view-block">
+        <router-outlet></router-outlet>
+    </div>
+</md-sidenav-layout>
