@@ -2,15 +2,15 @@
     <span>Sign in</span>
 </md-toolbar>
 <div class="auth-container">
-    <form>
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" novalidate>
         <div class="element-container">
-            <md-input placeholder="Email" type="email"></md-input>
+            <md-input ngControl="email" placeholder="Email" type="email" required></md-input>
         </div>
         <div class="element-container">
-            <md-input placeholder="Password" type="password"></md-input>
+            <md-input ngControl="password" placeholder="Password" type="password" required></md-input>
         </div>
         <div class="auth-form-actions layout">
-            <button md-raised-button color="primary" class="normal-button">Sign in</button>
+            <button md-raised-button color="primary" [disabled]="!form.valid" class="normal-button">Sign in</button>
             <div class="full-width-space"></div>
             <p><a [routerLink]="['Sign up']">Sign up</a></p>
         </div>
