@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {DashboardComponent} from 'app/components/dashboard/dashboard.component';
 
 import {MdButton} from '@angular2-material/button';
@@ -14,8 +14,8 @@ import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
     directives: [ROUTER_DIRECTIVES, MdButton, MdToolbar, MdIcon, MD_SIDENAV_DIRECTIVES, MD_LIST_DIRECTIVES],
     providers: [MdIconRegistry]
 })
-@RouteConfig([
-    {path:'/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true},
+@Routes([
+    {path:'/dashboard', component: DashboardComponent},
 ])
 export class RestrictedAreaComponent {
     
