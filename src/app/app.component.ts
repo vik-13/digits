@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ROUTER_DIRECTIVES, Routes, Router} from '@angular/router';
-import {RestrictedAreaComponent} from 'app/layouts/restricted-area/restricted-area.component';
+
 import {AccountComponent} from './components/account/account.component';
+import {DashboardComponent} from "./components/dashboard/dashboard.component";
 
 @Component({
     selector: 'my-app',
@@ -9,15 +10,21 @@ import {AccountComponent} from './components/account/account.component';
     directives: [ROUTER_DIRECTIVES]
 })
 @Routes([
-    {path:'/home', component: RestrictedAreaComponent},
-    {path:'/account/', component: AccountComponent}
+    {path:'/dashboard', component: DashboardComponent},
+    {path:'/account', component: AccountComponent},
+    {path: '*', component: DashboardComponent}
 ])
 export class AppComponent implements OnInit{
 
     constructor(private router: Router) {}
 
     ngOnInit() {
-        this.router.navigate(['/account']);
+        let auth:string = localStorage.getItem('token');
+        if (auth) {
+            this.router.navigate(['/dashboard']);
+        }else{
+            this.router.navigate(['/account']);
+        }
     }
 
 }

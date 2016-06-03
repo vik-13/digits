@@ -9,6 +9,7 @@ export class AuthService {
     }
 
     auth(token: String) {
+        console.log('auth with token...', token);
         localStorage.setItem('token', token);
         this.token = token;
     }

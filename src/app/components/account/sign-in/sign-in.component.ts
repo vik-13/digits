@@ -18,9 +18,9 @@ export class SignInComponent {
 
     onSubmit(form) {
         this.signInService.signIn({
-            email: form.value('email'),
-            password: form.value('password')
+            email: form.value.email,
+            password: form.value.password
         });
-        this.router.navigate(['Dashboard']);
+        this.router.navigate(['/dashboard']);
     }
 }
