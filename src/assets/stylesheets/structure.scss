@@ -21,7 +21,7 @@ html, body, .main-app-container {
 
 .main-view-block {
   margin: 0 auto;
-  max-width: 680px;
+  max-width: 900px;
   min-width: 320px;
 }
 
@@ -36,8 +36,13 @@ html, body, .main-app-container {
 
   .card {
     margin: 10px;
-    flex: 1;
-    min-width: 140px;
+    width: 280px;
+  }
+
+  &.game-card {
+    md-card-subtitle{
+
+    }
   }
 }
 
