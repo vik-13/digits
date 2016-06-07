@@ -1,0 +1,37 @@
+.leaders-sheet{
+  md-list-item {
+    display: flex;
+
+    p {
+      padding: 0 10px;
+      margin: 0;
+      line-height: 44px;
+      border-right: 1px solid #ffffff;
+    }
+    p:last-child {
+      border-right: none;
+    }
+
+    .leader-name {
+      flex: .3;
+    }
+    .leader-date {
+      flex: .5;
+    }
+    .leader-digits {
+      flex: .1;
+    }
+    .leader-lines {
+      flex: .1;
+    }
+
+    &.list-header {
+      background: #009688;
+      color: #ffffff;
+    }
+
+    &:not(.list-header):nth-child(even) {
+      background: #f7f7f7;
+    }
+  }
+}

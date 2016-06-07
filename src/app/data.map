@@ -1,0 +1,53 @@
+var data = {
+    digits: {
+        presence: {
+            'tomi',
+            'lisa'
+        },
+        users: {
+            tomi: {
+                name: 'Tomi',
+                status: 1, // 0 - offline; 1 - online
+                activeGame: 'game1' // false - no active game; game_id - current active game
+                games: {
+                    game1: false, // false - is not finished; true - is finished
+                    game2: true
+                }
+            },
+            lisa: {
+                name: 'Lisa'
+            }
+        },
+        games: {
+            game1: {
+                start: '12312312312', // timestamp
+                update: '21321312388',
+                creator: 'tomi'
+                users: [ // it can be skipped for the first version of app
+                    'tomi'
+                ]
+            },
+            game2: {
+
+            },
+            game3: {
+
+            }
+        },
+        gamesData: {
+            game1: {
+                snap: [
+                    1, 2, 3, 4, 5, 6, 7, 8, 9,
+                    1, 1, 1, 2, 1, 3, 1, 4, 1,
+                    5, 1, 6, 1, 7, 1, 8, 1, 9
+                ],
+                steps: [ // it allows to ctrl + z even while game is shared between users... and see history.
+                    [0, 9],
+                    [10, 11],
+                    [8, 17],
+                    [25, 26]
+                ]
+            }
+        }
+    }
+}
