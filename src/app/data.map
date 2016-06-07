@@ -34,6 +34,7 @@ var data = {
 
             }
         },
+        sharedGames: {} // It will be implemented a bit later...
         gamesData: {
             game1: {
                 snap: [
