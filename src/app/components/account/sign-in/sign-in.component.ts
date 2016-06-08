@@ -6,6 +6,7 @@ import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
 import {MdInput, MdHint} from '@angular2-material/input';
 
 import {SignInService} from './sign-in.service';
+import {AuthService} from 'app/auth/auth.service';
 
 @Component({
     selector: 'sign-in',
@@ -14,15 +15,18 @@ import {SignInService} from './sign-in.service';
     providers: [SignInService]
 })
 export class SignInComponent {
-    constructor(private signInService: SignInService, private router: Router) {}
+    constructor(
+        private authService: AuthService,
+        private signInService: SignInService,
+        private router: Router) {}
 
     onSubmit(form) {
         this.signInService.signIn({
             email: form.value.email,
             password: form.value.password
         }).then(function() {
+            this.authService.auth('some-very-nice-auth-token');
             this.router.navigate(['/dashboard']);
-            console.log(arguments);
         }, function(){
             console.log(arguments);
         });
