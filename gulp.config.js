@@ -3,8 +3,7 @@ module.exports = function() {
         sources: {
             index: 'src/index.html',
             tsScripts: [
-                'typings/index.d.ts',
-                'node_modules/angularfire2/es6/angularfire2.d.ts',
+                //'typings/index.d.ts',
                 'src/app/**/*.ts'
             ],
             jsScripts: 'src/app/**/*.js',
