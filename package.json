@@ -2,6 +2,10 @@
   "name": "Digits",
   "version": "0.0.1",
   "license": "GPLv3",
+  "scripts": {
+    "postinstall": "typings install",
+    "start": "gulp"
+  },
   "dependencies": {
     "@angular/common": "2.0.0-rc.1",
     "@angular/compiler": "2.0.0-rc.1",
