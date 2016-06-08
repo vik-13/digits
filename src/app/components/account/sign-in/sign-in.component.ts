@@ -20,7 +20,11 @@ export class SignInComponent {
         this.signInService.signIn({
             email: form.value.email,
             password: form.value.password
+        }).then(function() {
+            this.router.navigate(['/dashboard']);
+            console.log(arguments);
+        }, function(){
+            console.log(arguments);
         });
-        this.router.navigate(['/dashboard']);
     }
 }

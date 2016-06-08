@@ -3,7 +3,7 @@ import {provide} from '@angular/core';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import {ROUTER_PROVIDERS} from '@angular/router';
 import {AppComponent} from './app.component';
-import {FIREBASE_PROVIDERS, defaultFirebase} from 'angularfire2';
+import {FIREBASE_PROVIDERS, defaultFirebase, firebaseAuthConfig, AuthProviders, AuthMethods} from 'angularfire2';
 
 import {AuthService} from 'app/auth/auth.service';
 
@@ -14,5 +14,9 @@ bootstrap(AppComponent, [
     AuthService,
 
     FIREBASE_PROVIDERS,
-    defaultFirebase('https://torrid-heat-2819.firebaseio.com')
+    defaultFirebase('https://torrid-heat-2819.firebaseio.com'),
+    firebaseAuthConfig({
+        provider: AuthProviders.Password,
+        method: AuthMethods.Password
+    })
 ]);

@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "superstatic": "",
-    "browser-sync": ""
+    "browser-sync": "",
+    "typings":"^1.0.4"
   }
 }
