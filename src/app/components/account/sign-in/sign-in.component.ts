@@ -21,14 +21,18 @@ export class SignInComponent {
         private router: Router) {}
 
     onSubmit(form) {
+        console.log('on submit...');
         this.signInService.signIn({
             email: form.value.email,
             password: form.value.password
-        }).then(function() {
-            this.authService.auth('some-very-nice-auth-token');
-            this.router.navigate(['/dashboard']);
-        }, function(){
-            console.log(arguments);
+        }).then(data => {
+                console.log(data);
         });
+        //     .then(function() {
+        //     this.authService.auth('some-very-nice-auth-token');
+        //     this.router.navigate(['/dashboard']);
+        // }, function(){
+        //     console.log(arguments);
+        // });
     }
 }
